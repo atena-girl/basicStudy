@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   datasource: #db 접속 정보
     driverClassName: org.mariadb.jdbc.Driver
