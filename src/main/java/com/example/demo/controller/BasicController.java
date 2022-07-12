@@ -1,13 +1,12 @@
 package com.example.demo.controller;
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-@Controller
+@RestController
 public class BasicController {
+    @CrossOrigin("*")
     @PutMapping("/saveList")
-    public @ResponseBody String test() {
+    public String test(@RequestBody Map<String, Object> a) {
 
         return "success";
     }
