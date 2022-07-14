@@ -1,18 +1,16 @@
 package com.example.demo.data.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
+@Data
 @Table(name= "LIST")
 public class ListEntitiy {
-    @Id
-    @Column(name="contentKey")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "CONTENT_KEY")
     int contentKey;
-    @Column(name="content")
+    @Column(name="CONTENT")
     String content;
 }
