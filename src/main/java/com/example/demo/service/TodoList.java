@@ -24,4 +24,12 @@ public class TodoList {
         return listRepository.findAll();
     }
 
+    public void deleteTodoList(Map<String, Object> list)
+    {
+        List<Integer> beDeleted = (List<Integer>) list.get("deletedIndexList");
+        for (Integer deleteItem : beDeleted) {
+            listRepository.deleteByContentKey(deleteItem);
+        }
+
+    }
 }

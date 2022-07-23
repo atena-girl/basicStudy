@@ -19,9 +19,9 @@ public class BasicController {
 
     @CrossOrigin("*")
     @PutMapping("/saveList")
-    public String saveList(@RequestBody Map<String, Object> list) {
+    public String saveList(@RequestBody Map<String, Object> item) {
 
-        todoList.setTodoList(list);
+        todoList.setTodoList(item);
 
         return "success";
     }
@@ -31,5 +31,13 @@ public class BasicController {
     public List<ListEntitiy> getList() {
 
         return todoList.getTodoList();
+    }
+
+    @CrossOrigin("*")
+    @DeleteMapping("/deleteItem")
+    public String deleteItem(@RequestBody Map<String, Object> list) {
+        todoList.deleteTodoList(list);
+        String status = "200";
+        return status;
     }
 }
